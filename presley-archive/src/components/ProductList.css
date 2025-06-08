@@ -1,0 +1,235 @@
+.card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;  /* Increased from 1rem */
+  align-content:center;
+  justify-content: center;  /* Centers the grid as a whole */
+  justify-items: center;    /* Centers items within each grid cell */
+  margin: 0 auto;           /* Centers the grid container in its parent */
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  min-height: 340px; /* adjust as needed */
+}
+
+.image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 420px;
+  height: 420px; /* set a fixed height for uniformity */
+  object-fit: cover;
+}
+
+.image-container:hover img {
+  transform: scale(1.005);
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-top: 0.01rem;
+  margin-bottom: 0.1rem;
+  text-align: left;
+  color: #555;
+}
+
+.image-container:hover .product-name {
+  text-decoration: underline;
+}
+
+.product-brand {
+  font-size: 0.875rem;
+  color: #555;
+  margin: 0;
+  text-align: left;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight:bold;
+  color: #333;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+.product-sold {
+  position: absolute;
+  top: 360px;
+  left: 12px;
+  background: #6b2c23;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.3em 1em;
+  font-size: 0.95rem;
+  font-weight: bold;
+  z-index: 2;
+  letter-spacing: 0.05em;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-transform: lowercase;
+  pointer-events: none;
+}
+
+h1{
+  color: black;
+}
+
+
+/* For screens smaller than 1200px (e.g., smaller laptops, large tablets) */
+@media (max-width: 1200px) {
+  #root {
+    padding: 1.5rem; /* Slightly less padding */
+  }
+
+  .card {
+    grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+    gap: 1.5rem;  /* Adjusted for tablets */
+    padding: 1.5rem;
+  }
+
+  .image-container img {
+    height: 350px; /* Adjust image height */
+  }
+
+  .product-sold {
+    top: 310px; /* Adjust based on new image height */
+  }
+}
+
+/* For screens smaller than 992px (e.g., tablets in landscape) */
+@media (max-width: 992px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .card {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    gap: 1.2rem;  /* Adjusted for smaller tablets */
+    padding: 1rem;
+  }
+
+  .image-container {
+    min-height: 280px; /* Adjust min height */
+  }
+
+  .image-container img {
+    height: 300px; /* Further adjust image height */
+  }
+
+  .product-name,
+  .product-price {
+    font-size: 0.95rem; /* Slightly smaller fonts */
+  }
+
+  .product-brand {
+    font-size: 0.8rem;
+  }
+
+  .product-sold {
+    top: 260px; /* Adjust based on new image height */
+    font-size: 0.85rem; /* Smaller sold tag */
+    padding: 0.25em 0.8em;
+  }
+
+  .banner-container {
+    height: 400px; /* Adjust height for landscape tablets */
+    width: 100vw;
+    left: 0;
+    right: 0; /* Ensure it spans full width */
+    margin: 0; /* Remove margin */
+    transform: none; /* No translation needed when using full viewport width */
+  }
+}
+
+/* For screens smaller than 768px (e.g., tablets in portrait, large phones) */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 columns or consider 1 for very narrow layouts */
+    gap: 0.8rem;
+  }
+
+  .image-container {
+    min-height: 250px;
+  }
+
+  .image-container img {
+    height: 280px;
+  }
+
+  .product-sold {
+    top: 240px;
+    left: 8px; /* Adjust left positioning */
+    font-size: 0.8rem;
+    padding: 0.2em 0.7em;
+  }
+
+  .banner-container {
+    height: 300px; /* Adjust height */
+  }
+}
+
+/* For screens smaller than 576px (e.g., mobile devices) */
+@media (max-width: 576px) {
+  #root {
+    padding: 1rem 0.5rem; /* More compact padding for mobile */
+  }
+
+  .card {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    gap: 2rem;  /* Increased vertical spacing for mobile */
+    padding: 1rem 0.5rem;
+  }
+
+  .image-container {
+    min-height: 320px; /* Allow more height for single column image */
+    padding: 0.8rem 0; /* More padding */
+  }
+
+  .image-container img {
+    height: 300px; /* Maintain a good height for the single image */
+  }
+
+  .product-name {
+    font-size: 1.1rem; /* Slightly larger for readability */
+    margin-top: 0.5rem;
+  }
+
+  .product-brand {
+    font-size: 0.9rem;
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+  }
+
+  .product-sold {
+    top: 280px; /* Adjust based on new image height */
+    left: 50px;
+    font-size: 0.9rem;
+    padding: 0.3em 0.9em;
+
+  }
+
+  .banner-container {
+    height: 200px; /* Adjust height for mobile screens */
+    margin-bottom: 0; /* Less margin on mobile */
+    right: 100px; /* Align to the right edge */
+    margin-top: 10px;
+  }
+
+  .banner {
+    width: 100%; /* Ensure banner image fills container */
+  }
+}

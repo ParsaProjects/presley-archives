@@ -1,0 +1,408 @@
+.product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  align-items: center;
+}
+
+/* Remove fixed height from .modal-content and let it grow */
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+  text-align: center;
+  /* object-fit: contain; */ /* This isn't usually for the container */
+  overflow: hidden;
+  height: 100%;
+  min-height: 60vh;
+  background: none;
+  padding: 0;
+}
+
+/* Make the image container fill the column */
+.carousel-center,
+.product-image-container {
+  width: 200%; /* Changed from 200% - this was causing overflow on the modal */
+  height: 100%;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center image within its space */
+  background: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Make the image as large as possible without cropping */
+.modal-image {
+  width: 100%; /* Make image fill its container's width */
+  height: 100%; /* Make image fill its container's height */
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain; /* Changed from 'cover' to 'contain' to ensure entire image is visible, even if it adds padding */
+  margin: 0;
+}
+
+/* Position dots at the bottom center of the image */
+.carousel-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  width: auto;
+  z-index: 2;
+  background: rgba(255,255,255,0.15); /* Optional: subtle background for contrast */
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #bbb;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dot.active {
+  background: #333;
+}
+
+
+.arrow {
+  cursor: pointer;
+  height: 60px;
+  left: 97%; /* Place near the left edge */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s;
+  width: 20px;
+  z-index: 2;
+}
+
+.arrow-top, .arrow-bottom {
+  background-color: #666;
+  height: 4px;
+  left: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.arrow-top:after, .arrow-bottom:after {
+  background-color: #fff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-top {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+.arrow-top:after {
+  left: 100%;
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow-bottom {
+  transform: rotate(-45deg);
+  transform-origin: top right;
+}
+
+.arrow-bottom:after {
+  left: 0;
+  right: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-top:after {
+  left: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow:hover .arrow-bottom:after {
+  right: 0;
+  transition-delay: 0s;
+}
+
+.arrow:active {
+  transform: translateX(-50%) translateY(-50%) scale(0.9);
+}
+
+/* Right arrow styles */
+.arrow-right {
+  cursor: pointer;
+  height: 60px;
+  right: 97%; /* Position on the right */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s;
+  width: 20px;
+}
+
+.arrow-right-top, .arrow-right-bottom {
+  background-color: #666;
+  height: 4px;
+  right: -5px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.arrow-right-top:after, .arrow-right-bottom:after {
+  background-color: #fff;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: all 0.15s;
+}
+
+.arrow-right-top {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.arrow-right-top:after {
+  right: 100%;
+  left: 0;
+  transition-delay: 0s;
+}
+
+.arrow-right-bottom {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.arrow-right-bottom:after {
+  right: 0;
+  left: 100%;
+  transition-delay: 0.15s;
+}
+
+.arrow-right:hover .arrow-right-top:after {
+  right: 0;
+  transition-delay: 0.15s;
+}
+
+.arrow-right:hover .arrow-right-bottom:after {
+  left: 0;
+  transition-delay: 0s;
+}
+
+.arrow-right:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+
+.button {
+  position: relative;
+  width: 2em;
+  height: 2em;
+  border: none;
+  background: rgba(0, 0, 0, 0.11);
+  border-radius: 5px;
+  transition: background 0.5s;
+  bottom: 400px;
+  left: 1500px;
+}
+
+.X {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1.5px;
+  background-color: rgb(255, 255, 255);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.Y {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1.5px;
+  background-color: #fff;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.button:active {
+  background-color: rgb(0, 0, 0);
+}
+
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: #333;
+}
+
+.buy-links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.depop-btn{
+  width: 10vw;
+  max-width: 200px;
+  height: 3rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.insta-btn{
+  width: 10vw;
+  max-width: 200px;
+  height: 3rem;
+  background-color:black; /* Instagram's brand color */
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.suggestion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: #333;
+}
+
+.suggestion-grid{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.suggestion-image{
+  width: 400px; /* Fixed width for suggestion images */
+  height: 400px; /* Fixed height for suggestion images */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+  margin: 0.5rem; /* Spacing between suggestion images */
+}
+
+
+@media (max-width: 1024px){
+  .depop-btn{
+    width: 80vw; /* Adjusted for mobile */
+    max-width: 300px; /* Max width for larger screens */
+    height: 3rem;
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+  }
+  .insta-btn{
+    width: 80vw; /* Adjusted for mobile */
+    max-width: 300px; /* Max width for larger screens */
+    height: 3rem;
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+  }
+}
+
+/* Responsive styles for handheld devices */
+@media (max-width: 1000px) {
+
+  .product-page {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    min-height: 100vh; /* Allow full height for product page on mobile */
+    padding: 0.5rem; /* Add some padding for mobile */
+  }
+
+  .carousel-dots {
+    bottom: 10px; /* Reduced from 12px - adjust as needed */
+    padding: 2px 6px;
+    font-size: 0.9em;
+  }
+
+  .carousel-center,
+  .product-image-container {
+    width: 90%; /* Changed from 200% - this was causing overflow on the modal */
+    height: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center image within its space */
+    background: none;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .modal-image {
+    max-width: 100%; /* Image should not exceed the width of its container */
+    max-height: 100%; /* Image should not exceed the height of its container */
+    object-fit: contain; /* Ensure the entire image is visible, scaling down if needed */
+    border-radius: 0;
+    background: #fff; /* Keep background white if image has transparency */
+    /* Remove redundant height and width properties that conflict with max-width/height */
+    height: auto; /* Allow height to adjust proportionally based on width */
+    width: auto; /* Allow width to adjust proportionally based on height */
+    position: absolute;
+    left: 0;
+  }
+
+  .product-details {
+    padding: 1rem 0.5rem;
+    align-items: center; /* Centering product details on mobile modal */
+    font-size: 0.8rem;
+  }
+
+  .carousel-dots {
+    bottom: 10px;
+    padding: 2px 6px;
+    font-size: 0.9em;
+  }
+  .button { /* Styles for the close button in the modal */
+    top: 12px !important;
+    right: 12px !important;
+    left: auto !important;
+    bottom: auto !important;
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  .depop-btn{
+    width: 80vw; /* Adjusted for mobile */
+    max-width: 300px; /* Max width for larger screens */
+    height: 3rem;
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+  }
+  .insta-btn{
+    width: 80vw; /* Adjusted for mobile */
+    max-width: 300px; /* Max width for larger screens */
+    height: 3rem;
+    font-size: 0.9rem; /* Slightly smaller font size for mobile */
+  }
+}

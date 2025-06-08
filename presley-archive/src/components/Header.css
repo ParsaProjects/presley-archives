@@ -1,0 +1,231 @@
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 99.4vw;
+  z-index: 1003;
+  margin: 0;
+  height: 70px; /* Ensure this is the total height including content and internal padding */
+  padding: 0; /* Remove padding if you want direct height control */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.04);
+}
+
+/* Remove this if present */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-right: 0;
+  height: 10vh; /* Adjust logo size for desktop */
+  width: 10vw; /* Maintain aspect ratio */
+  max-width: 10vw; /* Limit max width for larger screens */
+}
+
+/* Add padding to your main content so it doesn't hide under the header */
+body, .app-content, .main-content {
+  padding-top: 50px; /* adjust to match your header height */
+}
+
+/* Update your .banner styles */
+.banner {
+  object-fit:cover; /* Keeps the image covering the area, cropping as needed */
+  width: 100%; /* Make the image span the full width of its container */ /* Make the image span the full height of its container */
+  height: 100%; /* Make the image span the full height of its container */
+  display: block;
+  z-index: 1003; /* Ensure this z-index is lower than the header if the header is fixed and should be on top */   
+  object-position: 5% 47%;             /* Better yet, move z-index: -1000 to .banner-container and remove from .banner */
+}
+
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 99.2vw;
+  max-width: 100vw;
+  height: 650px; /* Keep this height as it defines the banner's visual space */
+  margin: 0;
+  background-color: #ffffff;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  overflow: hidden; /* Important for cropping with object-fit */
+  border-radius: 0;
+  margin-bottom: 50px;
+  margin-top: 0;
+  z-index: -1000; /* This z-index is correct for placing the banner behind the header */
+}
+
+.navbar {
+  /* Use flexbox to align items in a row */
+  display: flex;
+  justify-content:flex-start;/* Center the navigation items horizontally */
+  align-items:center;/* Vertically align items */
+  width: 100%; /* Take full width of the header */
+  margin-top: 55px; /* Add some space below the logo if needed */
+}
+
+.navbar ul {
+  display: flex; /* Make the list items display in a row */
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.navbar .nav-links li {
+  margin: 0 15px; /* Spacing between list items */
+  /* Remove color, font-weight, padding, position, etc. from here.
+     These properties belong on the <a> tag (rendered by NavLink). */
+}
+
+
+/* Base styles for ALL navigation links (<a> tags rendered by NavLink) */
+.navbar .nav-links li a {
+  text-decoration: none; /* Removes the default browser underline */
+  color: #555; /* Default link color */
+  font-weight: bold;
+  padding: 5px 0; /* Provides clickable area and visual padding */
+  position: relative; /* Essential for positioning the ::after pseudo-element */
+  display: block; /* Makes the padding effectively part of the clickable area */
+  font-size: 14px; /* Apply base font size here */
+}
+
+/* Underline effect for hover */
+.navbar .nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0; /* Starts with no width */
+  height: 2px;
+  background: #555;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.navbar .nav-links li a:hover::after {
+  width: 100%; /* Expands on hover */
+  background: #000;
+}
+
+/* Style for the ACTIVE (current page) link */
+.navbar .nav-links li .active-nav-link {
+  color: #000; /* Change color for active link, e.g., to black */
+}
+
+.navbar .nav-links li .active-nav-link::after {
+  content: ''; /* Ensure content is present */
+  width: 100%; /* Make the underline visible immediately for active link */
+  background: #000; /* Color of the underline for active link */
+}
+
+
+
+/* Add this to the end of your NavBar.css for responsive/mobile support */
+
+@media (max-width: 1024px) {
+  header {
+    font-size: 1.2rem;
+    padding: 1rem 0; /* Adjusted padding to remove top/bottom explicit 0.5rem */
+    background-color: #fff;
+    width: 100%; /* Use 100% instead of 100vw for better compatibility, assuming parent is body */
+    position: fixed; /* Ensure it stays at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Make sure header is above other content */
+    display: flex; /* Enable flexbox for centering content */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Horizontally center content (e.g., logo) */
+  }
+  body,
+  .app-content,
+  .main-content {
+    /* This padding should be at least the header's height to prevent overlap */
+    padding-top: 100px; /* Assuming header height is around 100px with current padding */
+  }
+  .side-navbar {
+    width: 180px;
+    padding-top: 1.2rem;
+  }
+
+  .side-navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  header {
+    font-size: 1.1rem;
+    padding: 0.7rem 0; /* Adjusted padding */
+    background-color: #fff;
+    width: 100%; /* Ensure it spans the entire viewport width */
+    height: 10%; /* Let height adjust based on content and padding, remove fixed height */
+    /* Remove 'left: 100;' and 'right: 0;' as 'width: 100%' and 'top:0; left:0;' are sufficient with fixed positioning */
+    margin: 0;
+    display: flex; /* Re-apply flexbox for centering */
+    align-items: center;
+    justify-content: center;
+  }
+  body,
+  .app-content,
+  .main-content {
+    /* Adjust padding-top based on the header's actual height after changes */
+    padding-top: 70px; /* A common height for mobile headers. Inspect in browser to find exact value */
+  }
+
+  .nav-toggle {
+    background: none;
+    border: none;
+    /* Use the desired font-size for the icon here */
+    font-size: 1.7rem; /* Changed from 2rem */
+    position: fixed;
+    top: 12rem; /* <--- Keep this desired position */
+    left: 1rem;
+    z-index: 1002;
+    cursor: pointer;
+    color: #222;
+  }
+
+  .nav-icon {
+    font-size: 1rem;
+  }
+  .side-navbar {
+    width: 25vw;
+    left: -100vw;
+    padding-top: 1rem;
+  }
+  .side-navbar.open {
+    left: 0;
+  }
+  .nav-toggle {
+    top: 1.2rem;
+    left: 1rem;
+    font-size: 1.7rem;
+  }
+
+  .side-navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+
+  .logo {
+    margin-right: 0;
+    height: 100%; /* Adjust logo size for mobile */
+    width: auto; /* Maintain aspect ratio */
+    position: absolute;
+  }
+}

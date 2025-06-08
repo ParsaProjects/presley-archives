@@ -1,0 +1,88 @@
+/* ImageSlider.css */
+
+.slider {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 700px; /* This is the height of the image area only */
+  margin: 0;
+  overflow:hidden; /* Hide overflow to prevent scrollbars */
+  left: 50%;
+  transform: translateX(-50%);
+  /* Ensure no padding at the bottom here, as the dots will be separate */
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensure slide takes full height of slider */
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* CORRECTED: This will scale the image to fill the container, cropping excess */
+  object-position: 50% 50%; /* This centers the image in the container */
+}
+
+/* New wrapper for the white background below the image */
+.dots-and-arrows-wrapper {
+  width: 100vw; /* Span full viewport width */
+  background-color: white; /* White background for the dots/arrows area */
+  padding: 15px 0; /* Add vertical padding for the white space */
+  display: flex;
+  justify-content: center; /* Center the content inside */
+  align-items: center;
+  left: 50%; /* Center the wrapper */
+  transform: translateX(-50%); /* Center the wrapper */
+  position: relative; /* Needs to be relative if not directly in the flow to center with transform */
+  /* If this container needs to sit flush with the bottom of the slider,
+     you might need to adjust margin-bottom on .slider or margin-top on this. */
+}
+
+/* Container for dots and arrows (horizontally centered within the wrapper) */
+.dots-and-arrows-container {
+  display: flex;
+  align-items: center; /* Vertically align arrows and dots */
+  gap: 15px; /* Space between arrows and dots */
+  z-index: 2; /* Ensure it's above other content if there's overlap */
+  /* Remove absolute positioning from here, it's now controlled by its parent (.dots-and-arrows-wrapper) */
+  position: static;
+  transform: none;
+  left: auto;
+  bottom: auto;
+  padding: 0 20px; /* Optional: padding on sides if you want space from edge of wrapper */
+}
+
+
+
+
+/* Styles for navigation dots */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 6px; /* Space between dots */
+  /* Remove absolute positioning from here, it's now handled by .dots-and-arrows-container */
+  position: static;
+  transform: none;
+  left: auto;
+  bottom: auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(211, 74, 74, 0.3); /* Darker dots on white background */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dot.active {
+  background-color: #333; /* Active dot is darker on white background */
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker on hover */
+}
