@@ -26,6 +26,13 @@ html {
   scrollbar-width: thin;
 }
 
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* From Uiverse.io by mrhyddenn */ 
 .spinner {
   font-size: 28px;

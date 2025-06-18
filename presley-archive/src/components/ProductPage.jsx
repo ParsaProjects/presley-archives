@@ -41,7 +41,7 @@ function ProductPage({ products }) {
   // Instead of recalculating suggestions on every render, use useMemo.
   const suggestions = useMemo(() => {
     const suggestionCandidates = products.filter(
-      p => p.collection === product.collection && p.id !== product.id
+      p => p.collection === product.collection && p.id !== product.id && p.sold !== "yes"
     );
     return shuffleArray(suggestionCandidates).slice(0, 4);
   }, [products, product.collection, product.id]);
@@ -61,14 +61,8 @@ function ProductPage({ products }) {
               <div className="product-image-container">
                 <img src={images[current]} alt={product.name} className="modal-image" />
               </div>
-              <div className="carousel-dots">
-                {images.map((_, idx) => (
-                  <span
-                    key={idx}
-                    className={`dot${current === idx ? ' active' : ''}`}
-                    onClick={() => setCurrent(idx)}
-                  />
-                ))}
+              <div className="carousel-counter">
+                {images.length > 1 ? `${current + 1} / ${images.length}` : null}
               </div>
             </div>
             {images.length > 1 && (
@@ -79,15 +73,18 @@ function ProductPage({ products }) {
             )}
           </div>
         </div>
-        <div className="product-details">
-          <h2>{product.name}</h2>
-          <p>{product.brand}</p>
-          <p>${product.price}</p>
-          <p>{product.description1}</p>
-          <p>{product.description2}</p>
-          <p>{product.description3}</p>
-          <p>{product.description4}</p>
-          <p>{product.sold === "yes" ? "Product Sold" : " "}</p>
+        <div className="prod-details">
+          <h2 className="prod-name">{product.name}</h2>
+          <div className="prod-place">
+            <p className="prod-price">${product.price}</p>
+            <p className="prod-sold">{product.sold === "yes" ? "Sold" : " "}</p>
+          </div> 
+          <p className="prod-brand">{product.brand}</p>
+          <p className="prod-description1">{product.description1}</p>
+          <p className="prod-description2">{product.description2}</p>
+          <p className="prod-description3">{product.description3}</p>
+          <p className="prod-description4">{product.description4}</p>
+          
           <div className="buy-links">
             <a
               href={product.depop ? product.depop.replace(/[<>]/g, '').trim() : '#'}
@@ -107,22 +104,34 @@ function ProductPage({ products }) {
         </div>
       </div>
       <div className="suggestion">
-        <h3>You may also like</h3>
+        <h3 className="suggestion-title">You may also like</h3>
         <div className="suggestion-grid">
-          {suggestions.map(p => (
-            <div
-              key={p.id}
-              className="suggestion-item"
-              onClick={() => navigate(`/product/${p.id}`)}
-            >
-              <img src={p.image} alt={p.name} className="suggestion-image" />
-              <div className="suggestion-info">
-                <h4>{p.name}</h4>
-                <p>{p.brand}</p>
-                <p>${p.price}</p>
-              </div>
-            </div>
-          ))}
+          {suggestions.filter(p => p.sold !== "yes").length === 0 ? (
+            <div className="no-suggestions">No suggestions available.</div>
+          ) : (
+            suggestions
+              .filter(p => p.sold !== "yes")
+              .map(p => (
+                <div
+                  key={p.id}
+                  className="suggestion-item"
+                  onClick={() => navigate(`/product/${p.id}`)}
+                >
+                  <img
+                    src={p.image || "/placeholder.jpg"}
+                    alt={p.name}
+                    className="suggestion-image"
+                  />
+                  <div className="suggestion-info">
+                    <h4 className="p-name">{p.name}</h4>
+                    <p className="p-brand">{p.brand}</p>
+                    <p className="p-price">
+                      ${typeof p.price === "number" ? p.price.toFixed(2) : p.price}
+                    </p>
+                  </div>
+                </div>
+              ))
+          )}
         </div>
       </div>
     </>

@@ -17,6 +17,7 @@
   background: #fff;
   border-radius: 12px;
   min-height: 340px; /* adjust as needed */
+  margin-top: 50px; /* add margin to the top */
 }
 
 .image-wrapper {
@@ -27,8 +28,8 @@
 }
 
 .image-container img {
-  max-width: 420px;
-  height: 420px; /* set a fixed height for uniformity */
+  max-width: 380px;
+  height: 380px; /* set a fixed height for uniformity */
   object-fit: cover;
 }
 
@@ -37,7 +38,7 @@
 }
 
 .product-name {
-  font-size: 1rem;
+  font-size: 18px !important;
   font-weight: lighter;
   margin-top: 0.01rem;
   margin-bottom: 0.1rem;
@@ -50,25 +51,25 @@
 }
 
 .product-brand {
-  font-size: 0.875rem;
+  font-size: 14px !important;
   color: #555;
   margin: 0;
   text-align: left;
 }
 
 .product-price {
-  font-size: 1rem;
+  font-size: 16px !important;
   font-weight:bold;
   color: #333;
-  margin-top: 0.5rem;
+  margin-top: -2px !important;
   text-align: left;
 }
 
 .product-sold {
   position: absolute;
-  top: 360px;
+  top: 340px;
   left: 12px;
-  background: #6b2c23;
+  background: #000000;
   color: #fff;
   border-radius: 8px;
   padding: 0.3em 1em;
@@ -141,6 +142,7 @@ h1{
     top: 260px; /* Adjust based on new image height */
     font-size: 0.85rem; /* Smaller sold tag */
     padding: 0.25em 0.8em;
+    left: 15px;
   }
 
   .banner-container {
@@ -161,7 +163,7 @@ h1{
   }
 
   .image-container {
-    min-height: 250px;
+    min-height: 280px;
   }
 
   .image-container img {
@@ -169,67 +171,69 @@ h1{
   }
 
   .product-sold {
-    top: 240px;
-    left: 8px; /* Adjust left positioning */
+    top: 140px;
+    left: 20px;
     font-size: 0.8rem;
     padding: 0.2em 0.7em;
   }
 
   .banner-container {
-    height: 300px; /* Adjust height */
+    height: 200px; /* Adjust height */
   }
 }
 
 /* For screens smaller than 576px (e.g., mobile devices) */
 @media (max-width: 576px) {
   #root {
-    padding: 1rem 0.5rem; /* More compact padding for mobile */
+    padding: 0;
   }
 
   .card {
-    grid-template-columns: 1fr; /* Single column layout for mobile */
-    gap: 2rem;  /* Increased vertical spacing for mobile */
-    padding: 1rem 0.5rem;
+    grid-template-columns: repeat(2, 1fr); /* Two columns on mobile */
+    gap: 0.5rem;
+    padding: 0;
+    width: 100%;
+    margin: 0;
   }
 
   .image-container {
-    min-height: 320px; /* Allow more height for single column image */
-    padding: 0.8rem 0; /* More padding */
+    min-height: 120px;
+    margin-top: 50px;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .image-container img {
-    height: 300px; /* Maintain a good height for the single image */
+    height: 180px;
+    max-width: 100%;
+    width: 90%;
+    object-fit: cover;
   }
 
-  .product-name {
-    font-size: 1.1rem; /* Slightly larger for readability */
-    margin-top: 0.5rem;
-  }
-
-  .product-brand {
-    font-size: 0.9rem;
+  .product-name,
+  .product-brand,
+  .product-price {
+    text-align:left;
+    width: 100%;
+    padding: 0 9px;
+    font-size: 0.75rem !important;
   }
 
   .product-price {
-    font-size: 1.2rem;
+    margin-top: -20px;
   }
 
   .product-sold {
-    top: 280px; /* Adjust based on new image height */
-    left: 50px;
-    font-size: 0.9rem;
-    padding: 0.3em 0.9em;
-
-  }
-
-  .banner-container {
-    height: 200px; /* Adjust height for mobile screens */
-    margin-bottom: 0; /* Less margin on mobile */
-    right: 100px; /* Align to the right edge */
-    margin-top: 10px;
-  }
-
-  .banner {
-    width: 100%; /* Ensure banner image fills container */
+    top: 155px;
+    left: 22px;
+    font-size: 0.7rem;
+    padding: 0.15em 0.5em;
   }
 }
