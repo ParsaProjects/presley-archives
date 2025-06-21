@@ -101,6 +101,28 @@ h1{
   }
 
   .image-container img {
+    height: 210px !important; /* Adjust image height */
+    width: 210px !important;
+  }
+
+  .product-sold {
+    top: 310px; /* Adjust based on new image height */
+  }
+}
+
+/* For screens smaller than 992px (e.g., tablets in portrait) */
+@media (max-width: 1090px){
+  #root {
+    padding: 1.5rem; /* Slightly less padding */
+  }
+
+  .card {
+    grid-template-columns: repeat(3, 1fr); /* Change to 3 columns */
+    gap: 1.5rem;  /* Adjusted for tablets */
+    padding: 1.5rem;
+  }
+
+  .image-container img {
     height: 350px; /* Adjust image height */
   }
 

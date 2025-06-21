@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer(){
     return (
@@ -13,8 +14,8 @@ function Footer(){
 
                 <div className="info">
                     <h2>info</h2>
-                    <a href="/shipping">shipping & returns</a>
-                    <a href="/authenticity">authenticity</a>
+                    <Link to="/info/Shipping">shipping & returns</Link>
+                    <Link to="/info/Authenticity">authenticity</Link>
                 </div>
             </div>
             <p className="footer-text">© 2025 Presley Archive</p>

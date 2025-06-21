@@ -68,8 +68,8 @@ body, .app-content, .main-content {
   justify-content:flex-start;/* Center the navigation items horizontally */
   align-items:center;/* Vertically align items */
   width: 100%; /* Take full width of the header */
-  margin-top: 50px; /* Add some space below the logo if needed */
-  margin-left: 250px; /* Adjust this if you want to position it differently */
+  margin-top: 40px; /* Add some space below the logo if needed */
+  margin-left: 325px; /* Adjust this if you want to position it differently */
 }
 
 .navbar ul {
@@ -90,7 +90,7 @@ body, .app-content, .main-content {
 .navbar .nav-links li a {
   text-decoration: none; /* Removes the default browser underline */
   color: #555; /* Default link color */
-  font-weight: bold;
+  font-weight: 500;
   padding: 5px 0; /* Provides clickable area and visual padding */
   position: relative; /* Essential for positioning the ::after pseudo-element */
   display: block; /* Makes the padding effectively part of the clickable area */
@@ -220,6 +220,7 @@ body, .app-content, .main-content {
     padding: 18px 24px;
     font-size: 1.1rem;
     text-align: left;
+    font-weight: 500;
   }
   .side-navbar li:last-child {
     border-bottom: none;

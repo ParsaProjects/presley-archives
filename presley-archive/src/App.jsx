@@ -8,6 +8,8 @@ import ProductList from './components/ProductList';
 import Archived from './components/Archived';
 import Shop from './components/Shop';
 import About from './components/About';
+import Shipping from './components/info/Shipping';
+import Authenticity from './components/info/Authenticity';
 import { fetchProducts } from './components/fetchProducts';
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
         <Route path="/archived" element={<Archived />} />
         <Route path="/shop" element={<Shop products={products} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/info/Shipping" element={<Shipping />} />
+        <Route path="/info/Authenticity" element={<Authenticity />} />
       </Routes>
       <Footer />
     </Router>
