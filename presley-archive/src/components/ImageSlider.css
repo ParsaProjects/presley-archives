@@ -95,7 +95,7 @@
   }
 
   .slide-image {
-    height: 120px;
+    height: 300px;
     width: 100vw;
     object-fit: cover;
   }

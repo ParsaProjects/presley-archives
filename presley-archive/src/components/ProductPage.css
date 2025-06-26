@@ -347,8 +347,8 @@
 }
 
 .suggestion-image{
-  width: 400px; /* Fixed width for suggestion images */
-  height: 400px; /* Fixed height for suggestion images */
+  width: 300px !important; /* Fixed width for suggestion images */
+  height: 300px !important; /* Fixed height for suggestion images */
   object-fit: cover; /* Ensure images cover the area without distortion */
   margin: 0.25rem !important; /* Spacing between suggestion images */
 }
@@ -749,9 +749,9 @@
 .prod-sold {
   font-size: 14px !important; /* Adjusted for better readability */
   color: #ffffff;
-  margin-top: 10px; /* or adjust as needed */
+  margin-top: 20px; /* or adjust as needed */
   text-align: center;    /* Ensure left alignment */
-  width: 50px;         /* Optional: ensures it fills the container */
+  width: 70px;         /* Optional: ensures it fills the container */
   padding: 0;          /* Match other details */
   background: #000000;
   border-radius: 10px;
@@ -815,8 +815,8 @@
 }
 
 .suggestion-image{
-  width: 400px; /* Fixed width for suggestion images */
-  height: 400px; /* Fixed height for suggestion images */
+  width: 300px; /* Fixed width for suggestion images */
+  height: 300px; /* Fixed height for suggestion images */
   object-fit: cover; /* Ensure images cover the area without distortion */
   margin: 0.5rem; /* Spacing between suggestion images */
 }
@@ -1040,7 +1040,7 @@
     color: #ffffff;
     margin-top: 10px;
     text-align: center;
-    width: 50px;
+    width: 70px;
     padding: 0;
     background: #000000;
     border-radius: 10px;
@@ -1095,11 +1095,12 @@
     width: 100%;
     padding: 0;
     box-sizing: border-box;
+    align-items: center; /* Center items in the grid */
   }
 
   .suggestion-image {
-    width: 100%;
-    height: auto;
+    width: 150px !important; /* Adjusted for mobile */
+    height: 150px !important; /* Adjusted for mobile */
     object-fit: cover;
   }
 

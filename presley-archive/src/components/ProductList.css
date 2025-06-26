@@ -28,8 +28,10 @@
 }
 
 .image-container img {
-  max-width: 380px;
-  height: 380px; /* set a fixed height for uniformity */
+   /* set a fixed height for uniformitymax-width: 350px;
+  height: 350px; */
+  width: 20vw;
+  height: 45vh ; /* Ensure all images have the same height */
   object-fit: cover;
 }
 
@@ -222,7 +224,7 @@ h1{
     min-height: 120px;
     margin-top: 50px;
     padding: 0;
-    width: 100%;
+    width: 93%;
     box-sizing: border-box;
   }
 
@@ -253,8 +255,8 @@ h1{
   }
 
   .product-sold {
-    top: 155px;
-    left: 22px;
+    top: 185px;
+    left: 8px;
     font-size: 0.7rem;
     padding: 0.15em 0.5em;
   }

@@ -77,7 +77,7 @@ function ProductPage({ products }) {
           <h2 className="prod-name">{product.name}</h2>
           <div className="prod-place">
             <p className="prod-price">${product.price}</p>
-            <p className="prod-sold">{product.sold === "yes" ? "Sold" : " "}</p>
+            <p className="prod-sold">{product.sold === "yes" ? "sold out" : " "}</p>
           </div> 
           <p className="prod-brand">{product.brand}</p>
           <p className="prod-description1">{product.description1}</p>
