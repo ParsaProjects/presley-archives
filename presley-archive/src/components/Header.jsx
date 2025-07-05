@@ -17,11 +17,14 @@ function Header () {
   return (
     <>
       <header>
-        <img
-          src="https://i.imgur.com/Ij441cq.png"
-          alt="logo"
-          className="logo"
-        />
+        
+          <img
+            src="https://i.postimg.cc/7YC1HvYT/Untitled-design.png"
+            alt="logo"
+            className="logo"
+            style={{ cursor: "pointer" }}
+          />
+        
         {/* Hamburger button for mobile nav */}
         <button className={`nav-toggle${open ? ' open' : ''}`} onClick={() => setOpen(!open)}>
           <span className="bar"></span>
@@ -57,16 +60,40 @@ function Header () {
         <nav className={`side-navbar${open ? ' open' : ''}`}>
           <ul>
             <li>
-              <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => isActive ? "active-side-link" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <Link to="/shop" onClick={() => setOpen(false)}>Shop</Link>
+              <NavLink
+                to="/shop"
+                className={({ isActive }) => isActive ? "active-side-link" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                Shop
+              </NavLink>
             </li>
             <li>
-              <Link to="/archived/" onClick={() => setOpen(false)}>Archived</Link>
+              <NavLink
+                to="/archived/"
+                className={({ isActive }) => isActive ? "active-side-link" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                Archived
+              </NavLink>
             </li>
             <li>
-              <Link to="/about" onClick={() => setOpen(false)}>About</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => isActive ? "active-side-link" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                About
+              </NavLink>
             </li>
           </ul>
         </nav>

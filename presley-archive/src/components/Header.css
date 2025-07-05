@@ -22,9 +22,9 @@ header {
   justify-content: center;
   position: absolute;
   margin-right: 0;
-  height: 10vh; /* Adjust logo size for desktop */
-  width: 10vw; /* Maintain aspect ratio */
-  max-width: 10vw; /* Limit max width for larger screens */
+  height: 25vh; /* Adjust logo size for desktop */
+  width: 15vw; /* Maintain aspect ratio */
+   /* Limit max width for larger screens */
 }
 
 /* Add padding to your main content so it doesn't hide under the header */
@@ -194,7 +194,7 @@ body, .app-content, .main-content {
     position: fixed;
     top: 48px;           /* Start below the header */
     left: 0;
-    width: 100vw;
+    width: 90vw;
     height: calc(100vh - 48px); /* Fill below the header */
     background: #fff;
     box-shadow: 2px 0 8px rgba(0,0,0,0.08);
@@ -214,11 +214,12 @@ body, .app-content, .main-content {
     padding: 0;
     margin: 0;
     list-style: none;
+    margin-top: 30px;
   }
   .side-navbar li {
     width: 100%;
     padding: 18px 24px;
-    font-size: 1.1rem;
+    font-size: 18px !important;
     text-align: left;
     font-weight: 500;
   }
@@ -242,6 +243,17 @@ body, .app-content, .main-content {
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 900;
+  }
+
+  .active-side-link {
+    color: #000;
+    font-weight: bold;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    display: block;
+    border-bottom: 1px dotted #000;
+    width: 30% !important; /* Ensure the active link has a visible underline */
   }
 }
 
@@ -271,13 +283,14 @@ body, .app-content, .main-content {
     height: 48px;         /* Match header height */
   }
   .logo {
-    width: 100px !important;
-    height: 48px !important;
+    width: 40vw !important;
+    height: 40vh !important;
     max-width: none !important;
     max-height: none !important;
     margin: 0 auto;
     display: block;
     object-fit: contain;
+    margin-top: 15px !important; /* Adjust logo margin for mobile */
   }
   .nav-links {
     flex-direction: row;

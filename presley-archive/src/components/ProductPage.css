@@ -815,10 +815,10 @@
 }
 
 .suggestion-image{
-  width: 300px; /* Fixed width for suggestion images */
-  height: 300px; /* Fixed height for suggestion images */
+  width: 13vw !important; /* Fixed width for suggestion images */
+  height: 30vh !important; /* Fixed height for suggestion images */
   object-fit: cover; /* Ensure images cover the area without distortion */
-  margin: 0.5rem; /* Spacing between suggestion images */
+  margin: 1rem !important; /* Spacing between suggestion images */
 }
 
 /* Underline .p-name when hovering over .suggestion-image in the same .suggestion */
