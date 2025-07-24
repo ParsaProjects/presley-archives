@@ -54,6 +54,11 @@ function Header () {
                 About
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/styling" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
+                Styling
+              </NavLink>
+            </li>
           </ul>
         </nav>
         {/* Mobile side-navbar */}
@@ -93,6 +98,15 @@ function Header () {
                 onClick={() => setOpen(false)}
               >
                 About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/styling"
+                className={({ isActive }) => isActive ? "active-side-link" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                Styling
               </NavLink>
             </li>
           </ul>

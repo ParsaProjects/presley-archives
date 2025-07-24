@@ -10,6 +10,7 @@ import Shop from './components/Shop';
 import About from './components/About';
 import Shipping from './components/info/Shipping';
 import Authenticity from './components/info/Authenticity';
+import Styling from './components/Styling';
 import { fetchProducts } from './components/fetchProducts';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/info/Shipping" element={<Shipping />} />
         <Route path="/info/Authenticity" element={<Authenticity />} />
+        <Route path="/styling" element={<Styling />} />
       </Routes>
       <Footer />
     </Router>

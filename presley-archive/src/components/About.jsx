@@ -3,11 +3,8 @@ function About() {
     <div className="about">
       <h1>About Presley Archive</h1>
       <p>
-        Presley Archive is a community-driven project dedicated to preserving the legacy of Elvis Presley. 
-        Our mission is to provide a comprehensive and accessible archive of Elvis's life, music, and impact on culture.
-      </p>
-      <p>
-        We believe in the power of community and collaboration. If you have any suggestions, feedback, or would like to contribute, please reach out to us.
+        Our shop is rooted in the belief that clothing should be personal, intentional, and sustainable. Each piece is hand-picked and thoughtfully curated in Vancouver, with a focus on quality, individuality, and timeless style.
+        Whether it's vintage, designer, or simply a standout find, we source every item with care—so you can wear something that feels as good as it looks.
       </p>
     </div>
   );

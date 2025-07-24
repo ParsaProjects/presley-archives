@@ -16,6 +16,7 @@ function NavBar() {
           <li className='underline'><Link to="/shop" onClick={() => setOpen(false)}>Shop</Link></li>
           <li className='underline'><Link to="/archived/" onClick={() => setOpen(false)}>Archived</Link></li>
           <li className='underline'><Link to="/about" onClick={() => setOpen(false)}>About</Link></li>
+          <li className='underline'><Link to="/styling" onClick={() => setOpen(false)}>Styling</Link></li>
         </ul>
       </nav>
       {open && <div className="nav-backdrop" onClick={() => setOpen(false)}></div>}
