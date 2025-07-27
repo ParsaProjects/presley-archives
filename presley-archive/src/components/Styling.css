@@ -24,24 +24,23 @@
 }
 
 .style img{
-    width: 45vw;
-    height: 70vh;
+    width: 600px;
+    height: 600px;
     display: block;
-    margin-left: -13vw;
+    margin-left: 1vw;
 }
 
 .style-text h1 {
-    margin-bottom: 90px;
     font-weight: 100;
 }
 
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .style img{
-    width: 59vw;
-    height: 80vh;
+    width: 49vw;
+    height: 70vh;
     display: block;
-    margin-left: 1vw;
+    margin-left: 10vw;
   }
 }
 
