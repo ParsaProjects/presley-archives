@@ -23,14 +23,14 @@
     margin-top: 0;
 }
 
-img.style{
+.style img{
     max-width: 650px;
     height: auto;
     display: block;
     margin-left: -150px;
 }
 
-h1.style-text {
+.style-text h1 {
     margin-bottom: 90px;
 }
 
