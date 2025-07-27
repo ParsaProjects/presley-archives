@@ -69,7 +69,7 @@ body, .app-content, .main-content {
   align-items:center;/* Vertically align items */
   width: 100%; /* Take full width of the header */
   margin-top: 40px; /* Add some space below the logo if needed */
-  margin-left: 325px; /* Adjust this if you want to position it differently */
+  margin-left: 20vw; /* Adjust this if you want to position it differently */
 }
 
 .navbar ul {

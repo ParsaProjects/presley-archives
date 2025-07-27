@@ -24,7 +24,6 @@ function Header () {
             src="https://i.postimg.cc/7YC1HvYT/Untitled-design.png"
             alt="logo"
             className="logo"
-            style={{ cursor: "pointer" }}
           />
         
         {/* Hamburger button for mobile nav */}

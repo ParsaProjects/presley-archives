@@ -391,298 +391,6 @@
   text-align: left;
 }
 
-
-@media (max-width: 1024px){
-  .depop-btn{
-    width: 80vw; /* Adjusted for mobile */
-    max-width: 300px; /* Max width for larger screens */
-    height: 3rem;
-    font-size: 0.9rem; /* Slightly smaller font size for mobile */
-  }
-  .insta-btn{
-    width: 80vw; /* Adjusted for mobile */
-    max-width: 300px; /* Max width for larger screens */
-    height: 3rem;
-    font-size: 0.9rem; /* Slightly smaller font size for mobile */
-  }
-}
-
-/* Responsive styles for handheld devices */
-@media (max-width: 1000px) {
-
-  .product-page {
-    grid-template-columns: 1fr; /* Single column for mobile */
-    min-height: 100vh; /* Allow full height for product page on mobile */
-    padding: 0.5rem; /* Add some padding for mobile */
-  }
-
-  .carousel-dots {
-    bottom: 10px; /* Reduced from 12px - adjust as needed */
-    padding: 2px 6px;
-    font-size: 0.9em;
-  }
-
-  .carousel-center,
-  .product-image-container {
-    width: 90%; /* Changed from 200% - this was causing overflow on the modal */
-    height: 100%;
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center image within its space */
-    background: none;
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .modal-image {
-    max-width: 100%; /* Image should not exceed the width of its container */
-    max-height: 100%; /* Image should not exceed the height of its container */
-    object-fit: contain; /* Ensure the entire image is visible, scaling down if needed */
-    border-radius: 0;
-    background: #fff; /* Keep background white if image has transparency */
-    /* Remove redundant height and width properties that conflict with max-width/height */
-    height: auto; /* Allow height to adjust proportionally based on width */
-    width: auto; /* Allow width to adjust proportionally based on height */
-    position: absolute;
-    left: 0;
-  }
-
-  .product-details {
-    padding: 1rem 0.5rem;
-    align-items: center; /* Centering product details on mobile modal */
-    font-size: 0.8rem;
-  }
-
-  .carousel-dots {
-    bottom: 10px;
-    padding: 2px 6px;
-    font-size: 0.9em;
-  }
-  .button { /* Styles for the close button in the modal */
-    top: 12px !important;
-    right: 12px !important;
-    left: auto !important;
-    bottom: auto !important;
-    width: 1.8em;
-    height: 1.8em;
-  }
-
-  .depop-btn{
-    width: 80vw; /* Adjusted for mobile */
-    max-width: 300px; /* Max width for larger screens */
-    height: 3rem;
-    font-size: 0.9rem; /* Slightly smaller font size for mobile */
-  }
-  .insta-btn{
-    width: 80vw; /* Adjusted for mobile */
-    max-width: 300px; /* Max width for larger screens */
-    height: 3rem;
-    font-size: 0.9rem; /* Slightly smaller font size for mobile */
-    margin-bottom: 50px;
-  }
-
-  .suggestion-info {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem; /* Adjusted for better readability */
-    text-align: center; /* Center text for better appearance */
-    margin-left: 10px;
-  }
-
-  .p-name {
-    font-size: 50px;
-    font-weight: lighter;
-    margin-bottom: 0.2rem; /* Spacing between name and brand */
-    text-align: left;
-    color: #555;
-  }
-
-  .p-brand {
-    font-size: 15px;
-    font-weight: 200;
-    color: #555;
-    margin: 0;
-    text-align: left;
-  }
-
-  .p-price {
-    font-size: 0.5rem;
-    font-weight:bold;
-    color: #333;
-    margin-top: 0.5rem;
-    text-align: left;
-  }
-
-  .arrow,
-  .arrow-right {
-    height: 32px;
-    width: 14px;
-  }
-  .arrow-top, .arrow-bottom,
-  .arrow-right-top, .arrow-right-bottom {
-    height: 3px;
-  }
-}
-
-@media (max-width: 576px) {
-  .prod-page {
-    grid-template-columns: 1fr;
-    padding: 0.5rem;
-  }
-
-  .carousel-center,
-  .prod-image-container {
-    width: 100%;
-    min-height: 70vh;
-    margin-bottom: -30px;
-  }
-
-  .modal-image {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .prod-details {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem;
-    font-size: 0.8rem;
-    text-align: left;
-    margin-left: 0;
-  }
-
-  .prod-name {
-    font-size: 30px !important;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  .prod-price {
-    font-size: 16px !important;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0.5rem;
-  }
-
-  .prod-sold {
-    font-size: 14px !important;
-    color: #ffffff;
-    margin-top: 10px;
-    text-align: center;
-    width: 100px;
-    padding: 0;
-    background: #000000;
-    border-radius: 10px;
-    margin-left: -20px;
-  }
-
-  .prod-desc1,
-  .prod-desc2,
-  .prod-desc3,
-  .prod-desc4 {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-
-  .prod-brand {
-    font-size: 0.75rem !important;
-    font-weight: 200;
-    color: #555;
-    margin: 0;
-    text-align: left;
-  }
-
-  .prod-place {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-  }
-
-  .depop-btn,
-  .insta-btn {
-    width: 90vw;
-    max-width: 400px;
-    height: 3rem;
-    font-size: 0.9rem;
-  }
-
-  .depop-btn {
-    margin-top: 50px;
-  }
-
-  .insta-btn {
-    margin-bottom: 50px;
-  }
-
-  .suggestion-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .suggestion-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .suggestion-info {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem;
-    text-align: center;
-    margin-left: 10px;
-  }
-
-  .p-name {
-    font-size: 1rem !important;
-    font-weight: lighter;
-    margin-bottom: 0.2rem;
-    text-align: left;
-    color: #555;
-  }
-
-  .p-brand {
-    font-size: 0.75rem !important;
-    font-weight: 200;
-    color: #555;
-    margin: 0;
-    text-align: left;
-  }
-
-  .p-price {
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 0.5rem;
-    text-align: left;
-  }
-
-  .arrow-right,
-  .arrow {
-    height: 50px;
-  }
-
-  .arrow,
-  .arrow-right {
-    height: 26px;
-    width: 12px;
-  }
-  .arrow-top, .arrow-bottom,
-  .arrow-right-top, .arrow-right-bottom {
-    height: 4px;
-  }
-}
-
 .carousel-counter {
   position: absolute;
   bottom: 24px;
@@ -913,7 +621,7 @@
     height: auto; /* Allow height to adjust proportionally based on width */
     width: auto; /* Allow width to adjust proportionally based on height */
     position: absolute;
-    left: 0;
+    left: -15px; /* Adjusted to fit within the modal */
   }
 
   .product-details {
@@ -990,6 +698,10 @@
   .arrow-top, .arrow-bottom,
   .arrow-right-top, .arrow-right-bottom {
     height: 3px;
+  }
+
+  .arrow {
+    left: 362px; /* Adjusted for better visibility */
   }
 }
 
@@ -1154,7 +866,7 @@
 
 .carousel-counter {
   position: absolute;
-  bottom: 24px;
+  bottom: 1vh;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 12px;
@@ -1162,5 +874,4 @@
   font-weight: 500;
   z-index: 2;
   color:#333;
-  margin-top: 40px;
 }

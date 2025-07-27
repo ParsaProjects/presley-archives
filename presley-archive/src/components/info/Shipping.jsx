@@ -6,7 +6,7 @@ function Shipping() {
       <h2>shipping & returns</h2>
       <h3>shipping info</h3>
       <p>
-        orders are typically processed and shipped within 2-7 business days. whether your order was placed through instagram or depop, you'll receive a canada post tracking number once your parcel has been sent out. once your package has been handed off to canada Post, we are not responsible for any lost or stolen parcels. if you run into any delivery issues, please contact canada post directly for support. untracked lettermail parcels are agreed upon before payment, and we are not responsible for lost packages once shipped.
+        orders are typically processed and shipped within 2-7 business days. whether your order was placed through instagram or depop, you'll receive a canada post tracking number once your parcel has been sent out. once your package has been handed off to canada post, we are not responsible for any lost or stolen parcels. if you run into any delivery issues, please contact canada post directly for support. untracked lettermail parcels are agreed upon before payment, and we are not responsible for lost packages once shipped.
       </p>
       <h3>return policy</h3>
       <p>

@@ -103,23 +103,23 @@ function ProductPage({ products }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="depop-btn">Buy on depop</button>
+              <button className="depop-btn">buy on depop</button>
             </a>
             <a
               href="https://www.instagram.com/presley_archive/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="insta-btn">Inquire on Insta</button>
+              <button className="insta-btn">instagram</button>
             </a>
           </div>
         </div>
       </div>
       <div className="suggestion">
-        <h3 className="suggestion-title">You may also like</h3>
+        <h3 className="suggestion-title">you may also like</h3>
         <div className="suggestion-grid">
           {suggestions.filter(p => p.sold !== "yes").length === 0 ? (
-            <div className="no-suggestions">No suggestions available.</div>
+            <div className="no-suggestions">no suggestions available.</div>
           ) : (
             suggestions
               .filter(p => p.sold !== "yes")

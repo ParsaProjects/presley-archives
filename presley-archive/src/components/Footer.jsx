@@ -18,7 +18,7 @@ function Footer(){
                     <Link to="/info/Authenticity">authenticity</Link>
                 </div>
             </div>
-            <p className="footer-text">© 2025 Presley Archive</p>
+            <p className="footer-text">© 2025 presley archive</p>
         </footer>
 
     );
