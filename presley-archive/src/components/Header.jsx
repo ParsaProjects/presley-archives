@@ -10,6 +10,8 @@ function Header () {
     location.pathname === "/shop" ||
     location.pathname === "/archived" ||
     location.pathname === "/archived/" ||
+    location.pathname.startsWith("/info/") ||
+    location.pathname.startsWith("/styling") ||
     location.pathname.startsWith("/product");
 
   const [open, setOpen] = useState(false);
@@ -56,7 +58,7 @@ function Header () {
             </li>
             <li>
               <NavLink to="/styling" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
-                Styling
+                Style bundles
               </NavLink>
             </li>
           </ul>
@@ -106,7 +108,7 @@ function Header () {
                 className={({ isActive }) => isActive ? "active-side-link" : undefined}
                 onClick={() => setOpen(false)}
               >
-                Styling
+                Style bundles
               </NavLink>
             </li>
           </ul>

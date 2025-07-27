@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSwipeable } from 'react-swipeable';
 import './ProductPage.css';
@@ -46,6 +46,18 @@ function ProductPage({ products }) {
     return shuffleArray(suggestionCandidates).slice(0, 4);
   }, [products, product.collection, product.id]);
 
+  const imageContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (imageContainerRef.current) {
+      imageContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [product.id]);
+
+  // Clean up depop URL if needed
+  const depopSlug = product.depop || '';
+  const cleanDepopUrl = `https://www.depop.com/products/presley_archive${depopSlug}`;
+
   return (
     <>
       <div className="product-page">
@@ -57,7 +69,7 @@ function ProductPage({ products }) {
                 <div className="arrow-bottom"></div>
               </div>
             )}
-            <div className="carousel-center">
+            <div className="carousel-center" ref={imageContainerRef}>
               <div className="product-image-container">
                 <img src={images[current]} alt={product.name} className="modal-image" />
               </div>
@@ -87,7 +99,7 @@ function ProductPage({ products }) {
           
           <div className="buy-links">
             <a
-              href={product.depop ? product.depop.replace(/[<>]/g, '').trim() : '#'}
+              href={cleanDepopUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

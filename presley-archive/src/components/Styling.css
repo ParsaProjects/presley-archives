@@ -1,0 +1,63 @@
+.style{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.style-text {
+    color: black;
+    font-size: 15px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px 32px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    background: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.style-text h1,
+.style-text .style-title {
+    margin-top: 0;
+}
+
+img.style{
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin-left: -150px;
+}
+
+h1.style-text {
+    margin-bottom: 90px;
+}
+
+
+
+@media (max-width: 800px) {
+  .style {
+    display: block;
+    grid-template-columns: none;
+    padding: 0;
+  }
+
+  .style-text {
+    max-width: 100%;
+    font-size: 16px;
+    padding: 16px 8px;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .style img,
+  .style-image {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    margin: 0 auto 16px auto;
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,29 @@
+.shipping{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    margin-bottom: 20vh;
+}
+
+.authentic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: 15px;
+    margin-bottom: 40vh;
+}
+
+@media (max-width: 600px) {
+  .shipping,
+  .authentic {
+    font-size: 14px;
+    padding: 12px 8px;
+    text-align: left;
+    align-items: flex-start;
+  }
+}
