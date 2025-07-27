@@ -60,4 +60,8 @@
     margin: 0 auto 16px auto;
     border-radius: 0;
   }
+
+  .style-text h1 {
+    margin-bottom: 25px;
+  }
 }

@@ -8,6 +8,14 @@
     margin-bottom: 20vh;
 }
 
+.shipping h2 {
+  font-weight: 300;
+}
+
+.shipping h3 {
+  font-weight: 300;
+}
+
 .authentic{
     display: flex;
     flex-direction: column;
@@ -16,6 +24,10 @@
     color: black;
     font-size: 15px;
     margin-bottom: 40vh;
+}
+
+.authentic h2 {
+  font-weight: 200;
 }
 
 @media (max-width: 600px) {

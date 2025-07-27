@@ -38,27 +38,22 @@ function Header () {
           <ul className="nav-links">
             <li>
               <NavLink to="/" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
-                Home
+                home
               </NavLink>
             </li>
             <li>
               <NavLink to="/shop" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
-                Shop
+                shop
               </NavLink>
             </li>
             <li>
               <NavLink to="/archived" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
-                Archived
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
-                About
+                archived
               </NavLink>
             </li>
             <li>
               <NavLink to="/styling" className={({ isActive }) => isActive ? "active-nav-link" : undefined}>
-                Style bundles
+                style bundles
               </NavLink>
             </li>
           </ul>
@@ -72,7 +67,7 @@ function Header () {
                 className={({ isActive }) => isActive ? "active-side-link" : undefined}
                 onClick={() => setOpen(false)}
               >
-                Home
+                home
               </NavLink>
             </li>
             <li>
@@ -81,7 +76,7 @@ function Header () {
                 className={({ isActive }) => isActive ? "active-side-link" : undefined}
                 onClick={() => setOpen(false)}
               >
-                Shop
+                shop
               </NavLink>
             </li>
             <li>
@@ -90,16 +85,7 @@ function Header () {
                 className={({ isActive }) => isActive ? "active-side-link" : undefined}
                 onClick={() => setOpen(false)}
               >
-                Archived
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) => isActive ? "active-side-link" : undefined}
-                onClick={() => setOpen(false)}
-              >
-                About
+                archived
               </NavLink>
             </li>
             <li>
@@ -108,7 +94,7 @@ function Header () {
                 className={({ isActive }) => isActive ? "active-side-link" : undefined}
                 onClick={() => setOpen(false)}
               >
-                Style bundles
+                style bundles
               </NavLink>
             </li>
           </ul>
