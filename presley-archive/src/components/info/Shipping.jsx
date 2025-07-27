@@ -10,7 +10,7 @@ function Shipping() {
       </p>
       <h3>return policy</h3>
       <p>
-        all purchases are final sale. We kindly ask that you check all provided measurements and photos carefully before placing your order to ensure the item is right for you. as each piece is pre-loved, gentle signs of wear are to be expected. we always try our best to highlight any notable flaws in the description and photos so you know exactly what you're getting.
+        all purchases are final sale. we kindly ask that you check all provided measurements and photos carefully before placing your order to ensure the item is right for you. as each piece is pre-loved, gentle signs of wear are to be expected. we always try our best to highlight any notable flaws in the description and photos so you know exactly what you're getting.
         if anything's unclear or you'd like to know more before purchasing, feel free to reach out via instagram or depop we're happy to answer any questions.  
       </p>
     </div>
