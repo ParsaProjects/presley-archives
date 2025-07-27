@@ -24,10 +24,10 @@
 }
 
 .style img{
-    max-width: 650px;
-    height: auto;
+    width: 35vw;
+    height: 70vh;
     display: block;
-    margin-left: -150px;
+    margin-left: -6vw;
 }
 
 .style-text h1 {
