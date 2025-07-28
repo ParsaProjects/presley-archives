@@ -110,7 +110,7 @@ function ProductPage({ products }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="insta-btn">instagram</button>
+              <button className="insta-btn">inquire via instagram</button>
             </a>
           </div>
         </div>
