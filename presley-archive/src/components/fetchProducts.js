@@ -19,6 +19,7 @@ export async function fetchProducts() {
       const product = record.fields;
       return {
         id: record.id || index,
+        order: product.order || index,
         name: product.name,
         brand: product.brand,
         price: Number(product.price),

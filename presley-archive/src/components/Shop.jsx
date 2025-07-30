@@ -34,7 +34,13 @@ function Shop() {
   // Filter out archived products and sort by newest first (largest id first)
   const soldProducts = products
     .filter(product => product.sold !== "yes")
-    .sort((a, b) => new Date(b.date) - new Date(a.date)); // Newest first
+    .sort((a, b) => {
+      console.log('Product A:', { id: a.id, order: a.order });
+      console.log('Product B:', { id: b.id, order: b.order });
+      const result = b.order - a.order;
+      console.log('Sort result:', result);
+      return result;
+    });
 
   return (
     <div className="card">
